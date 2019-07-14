@@ -11,6 +11,9 @@ export default new Vuex.Store({
   mutations: {
     setStrifes(state, data) {
       state.strifes = data;
+    },
+    filterStrifes(state, input) {
+      state.strifes = state.strifes.filter(strife => strife.title.includes(input))
     }
   },
   actions: {
