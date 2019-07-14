@@ -5,13 +5,18 @@ import api from '@/api'
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
+  state: {
+    strifes: []
+  },
   mutations: {
+    setStrifes(state, data) {
+      state.strifes = data;
+    }
   },
   actions: {
-    fetchStrifes() {
+    fetchStrifes(context) {
       api.get('/strifes').then(data => {
-        console.log(data);
+        context.commit('setStrifes', data.data)
       }).catch(console.error)
     }
   }

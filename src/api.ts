@@ -4,11 +4,9 @@ class Axios {
     prefix: string;
     axios: AxiosInstance
     constructor() {
-        this.prefix = 'localhost:3000'
+        this.prefix = 'http://localhost:3000'
         this.axios = axios.create({
-            baseURL: this.prefix,
-            withCredentials: true,
-            headers: { 'Access-Control-Allow-Origin': '*' }
+            baseURL: this.prefix
         })
     }
 
