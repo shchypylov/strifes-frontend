@@ -13,6 +13,9 @@ class Axios {
     get(url, config = {}) {
         return this.axios.get(url, config)
     }
+    post(url, data) {
+        return this.axios.post(url, data)
+    }
 }
 
 export default new Axios()

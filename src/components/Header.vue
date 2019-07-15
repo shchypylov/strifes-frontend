@@ -30,9 +30,7 @@ export default class Header extends Vue {
   searchInput = "";
 
   searchSubmit() {
-    if (this.searchInput) {
-      this.$store.commit("filterStrifes", this.searchInput);
-    }
+    this.$store.dispatch("fetchStrifesByName", this.searchInput);
   }
 }
 </script>
